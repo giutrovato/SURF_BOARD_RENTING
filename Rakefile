@@ -4,3 +4,9 @@
 require_relative "config/application"
 
 Rails.application.load_tasks
+
+
+
+
+
+# git stash / git status / git pull origin master
