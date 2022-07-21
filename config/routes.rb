@@ -2,12 +2,17 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  get "bookings/new", to: "bookings#new"
-  get "surfboards/new", to: "surfboards#new"
-  post "bookings", to: "bookings#create"
-  post "surfboards", to: "surfboards#create"
-  patch "bookings/:id", to: "bookings#update"
-  patch "surfboards/:id", to: "surfboards#update"
+  # get "bookings/new", to: "bookings#new"
+  # get "surfboards/new", to: "surfboards#new"
+  # post "bookings", to: "bookings#create"
+  # post "surfboards", to: "surfboards#create"
+  # patch "bookings/:id", to: "bookings#update"
+  # patch "surfboards/:id", to: "surfboards#update"
+
+  resources :surfboards, only: [:index, :show, :new, :create] do
+    resources :bookings, only: [:new]
+  end
+  resources :bookings, only: [:create]
 end
 
 

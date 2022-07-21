@@ -1,4 +1,10 @@
 class SurfboardsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
+
+  def index
+    @surfboards = Surfboard.all
+  end
+
   def create
     @surfboard = Surfboard.New(surfboard_params)
     @surfboard.user = current_user

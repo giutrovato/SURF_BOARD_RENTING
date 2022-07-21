@@ -1,12 +1,16 @@
 class BookingsController < ApplicationController
   def create
-    @booking = Booking.New(booking_params)
+    @booking = Booking.new(booking_params)
     @booking.user = current_user
     if @booking.save
       redirect_to course_path(@booking)
     else
       render :new
     end
+  end
+
+  def new
+    @booking = Booking.new
   end
 
   def show

@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 2022_07_19_185303) do
   create_table "surfboards", force: :cascade do |t|
     t.string "city"
     t.float "price_day"
-    t.string "type"
+    t.string "brand"
     t.text "detail"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
