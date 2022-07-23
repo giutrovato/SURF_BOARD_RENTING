@@ -3,6 +3,7 @@ class Surfboard < ApplicationRecord
 
   validates :city, presence: true
   validates :price_day, presence: true
-  validates :type, presence: true
+  validates :brand, presence: true
   validates :detail, presence: true
+  has_one_attached :photo
 end

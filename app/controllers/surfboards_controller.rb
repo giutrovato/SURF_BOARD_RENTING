@@ -1,9 +1,19 @@
 class SurfboardsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
+
+  def index
+    @surfboards = Surfboard.all
+  end
+
+  def new
+    @surfboard = Surfboard.new
+  end
+
   def create
-    @surfboard = Surfboard.New(surfboard_params)
+    @surfboard = Surfboard.new(surfboard_params)
     @surfboard.user = current_user
     if @surfboard.save
-      redirect_to course_path(@surfboard)
+      redirect_to surfboard_path(@surfboard)
     else
       render :new
     end
@@ -21,7 +31,7 @@ class SurfboardsController < ApplicationController
   private
 
   def surfboard_params
-    params.require(:surfboard).permit(:city, :price_day, :type, :detail, :user_id)
+    params.require(:surfboard).permit(:city, :price_day, :brand, :detail, :user_id, :photo)
   end
 
   def set_surfboard
