@@ -9,6 +9,10 @@ class BookingsController < ApplicationController
     end
   end
 
+  def index
+    @bookings = current_user.bookings
+  end
+
   def new
     @booking = Booking.new
   end
@@ -25,7 +29,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:status, :total_price)
+    params.require(:booking).permit(:status, :total_price, :start_day, :end_day)
   end
 
   def set_booking

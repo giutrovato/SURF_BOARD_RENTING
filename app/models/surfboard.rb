@@ -5,4 +5,5 @@ class Surfboard < ApplicationRecord
   validates :price_day, presence: true
   validates :brand, presence: true
   validates :detail, presence: true
+  has_one_attached :photo
 end

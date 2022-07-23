@@ -5,8 +5,14 @@
       <%= simple_form_for @booking do |f| %>
         <%= f.input :status %>
         <%= f.input :total_price %>
-        <%= f.input :start_day %>
-        <%= f.input :end_day %>
+        <tr>
+            <td><%= f.label text="Starts:" %></td>
+            <td><%= f.datetime_select :start_day, :order => [:day, :month, :year]%></td>
+        </tr>
+        <tr>
+            <td><%= f.label text="Ends:" %></td>
+            <td><%= f.datetime_select :end_day,:order => [:day, :month, :year]%></td>
+        </tr>
         <%= f.submit class: 'btn btn-primary' %>
       <% end %>
     </div>
