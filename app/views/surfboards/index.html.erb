@@ -1,6 +1,14 @@
-<h1>Hello</h1>
-<ul>
-  <% @surfboards.each do |surfboard| %>
-    <li><%= surfboard.city %></li>
-  <%end%>
-</ul>
+<h1>Rent me</h1>
+    <ul>
+      <% @surfboards.each do |surfboard| %>
+        <div class="card-product">
+          <% if surfboard.photo.attached? %>
+            <%= cl_image_tag surfboard.photo.key %>
+          <% end %>
+          <div class="card-product-infos">
+          <h2><%= surfboard.brand %></h2>
+          <p><%= surfboard.price_day.to_i %>€</p>
+          </div>
+        </div>
+      <%end%>
+    </ul>

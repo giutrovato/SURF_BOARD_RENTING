@@ -1,5 +1,7 @@
-  <%= image_tag "https://www.singlequiver.com/27015-superlarge_default/lost-round-nose-fish-retro-surfboard.jpg", class: "surfboard-picture" %>
+ <%= cl_image_tag @surfboard.photo.key, height: 300, width: 400, crop: :fill %>
   <h1><%= @surfboard.city %></h1>
   <h2><%= @surfboard.price_day %></h2>
   <h2><%= @surfboard.brand %></h2>
   <h2><%= @surfboard.detail %></h2>
+
+  <%# <%= image_tag "https://www.singlequiver.com/27015-superlarge_default/lost-round-nose-fish-retro-surfboard.jpg", class: "surfboard-picture" %>
