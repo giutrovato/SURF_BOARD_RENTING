@@ -12,11 +12,11 @@ user1 = User.create!(email: Faker::Internet.email,password:"123456")
 user2 = User.create!(email: Faker::Internet.email, password:"123456")
 
 10.times do
-surfboard = Surfboard.create!(city: Faker::Address.city, user:user1, price_day: rand(10..30), brand:Faker::Company.name, detail:"gg")
+  surfboard = Surfboard.create!(city: Faker::Address.city, user:user1, price_day: rand(10..30), brand:Faker::Company.name, detail:"gg")
 end
 
 10.times do
-surfboard = Surfboard.create!(city: Faker::Address.city, user:user2, price_day: rand(10..30), brand:Faker::Company.name, detail: "ht")
+  surfboard = Surfboard.create!(city: Faker::Address.city, user:user2, price_day: rand(10..30), brand:Faker::Company.name, detail: "ht")
 end
 
 # puts 'Creating 100 fake restaurants...'
