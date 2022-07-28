@@ -1,12 +1,12 @@
 <h1 class="text-center">Rent me</h1>
     <div class="album py-2 bg-light">
       <div class="container">
-        <div class="row">
+        <div class="row surfboard-index">
         <% @surfboards.each do |surfboard| %>
           <div class="col-3">
             <div class="card text-center">
               <% if surfboard.photo.attached? %>
-                <%= cl_image_tag surfboard.photo.key %>
+                <%= cl_image_tag surfboard.photo.key, height: 50, class:"index-pictures" %>
               <%end %>
               <div class="card-body">
                 <h4 class="card-title"><%= surfboard.brand %></h4>
@@ -19,4 +19,3 @@
         <%end%>
       </div>
     </div>
-  </div>

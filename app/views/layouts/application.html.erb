@@ -1,10 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <%= render 'shared/navbar' %>
-    <%= render 'shared/flashes' %>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
         <title>SURFBoardRenting</title>
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <%= csrf_meta_tags %>
@@ -17,7 +13,15 @@
       </head>
 
       <body>
-        <%= yield %>
-      <%= render 'shared/footer' %>
+
+      <div class="page-container">
+        <%= render "shared/navbar" %>
+        <main id="main-content">
+          <%= yield %>
+        </main>
+        <%= render "shared/footer" %>
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+      </div>
       </body>
 </html>

@@ -21,3 +21,9 @@
 .footer-links a:hover {
   opacity: 1;
 }
+
+.page-container {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  }
