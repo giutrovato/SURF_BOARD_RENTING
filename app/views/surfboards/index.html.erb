@@ -1,14 +1,22 @@
-<h1>Rent me</h1>
-    <ul>
-      <% @surfboards.each do |surfboard| %>
-        <div class="card-product">
-          <% if surfboard.photo.attached? %>
-            <%= cl_image_tag surfboard.photo.key %>
-          <% end %>
-          <div class="card-product-infos">
-          <h2><%= surfboard.brand %></h2>
-          <p><%= surfboard.price_day.to_i %>€</p>
+<h1 class="text-center">Rent me</h1>
+    <div class="album py-2 bg-light">
+      <div class="container">
+        <div class="row">
+        <% @surfboards.each do |surfboard| %>
+          <div class="col-3">
+            <div class="card text-center">
+              <% if surfboard.photo.attached? %>
+                <%= cl_image_tag surfboard.photo.key %>
+              <%end %>
+              <div class="card-body">
+                <h4 class="card-title"><%= surfboard.brand %></h4>
+                <h6 class="card-title"><%= surfboard.city %></h6>
+                <p class="card-text"><%= surfboard.price_day.to_i %>€</p>
+                <a href="<%=surfboard_path(surfboard)%>" class="btn btn-primary">Book me!</a>
+              </div>
+            </div>
           </div>
-        </div>
-      <%end%>
-    </ul>
+        <%end%>
+      </div>
+    </div>
+  </div>

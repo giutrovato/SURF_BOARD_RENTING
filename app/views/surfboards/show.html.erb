@@ -1,4 +1,6 @@
+ <% if @surfboard.photo.attached? %>
  <%= cl_image_tag @surfboard.photo.key, height: 300, width: 400, crop: :fill %>
+ <%end %>
   <h1><%= @surfboard.city %></h1>
   <h2><%= @surfboard.price_day %></h2>
   <h2><%= @surfboard.brand %></h2>

@@ -30,3 +30,14 @@
 .card-product .card-product-infos {
   padding: 16px;
 }
+
+.card {
+height: 250px;
+margin-top: 15px;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  }
