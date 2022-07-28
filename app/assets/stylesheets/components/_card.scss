@@ -8,7 +8,7 @@
 }
 
 .card-product img {
-  height: 100%;
+  height: 100px;
   width: 120px;
   object-fit: cover;
 }
@@ -30,3 +30,27 @@
 .card-product .card-product-infos {
   padding: 16px;
 }
+
+.card {
+margin-top: 15px;
+height: 250px;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  }
+
+  .surfboard-picture{
+    width: 400px;
+    height: 400px
+  }
+
+  .index-pictures {
+    object-fit: cover;
+  }
+
+  .surfboard-index {
+    margin-bottom: 15vh;
+  }
