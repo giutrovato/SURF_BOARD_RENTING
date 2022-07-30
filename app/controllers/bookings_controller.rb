@@ -2,8 +2,12 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.user = current_user
+    @surfboard = Surfboard.find(params[:surfboard_id])
+    @booking.surfboard = @surfboard
+    @booking.total_price = @surfboard.price_day * (@booking.end_day - @booking.start_day)
     if @booking.save
-      redirect_to course_path(@booking)
+      flash.notice = "Booking has been made"
+      redirect_to booking_path(@booking)
     else
       render :new
     end

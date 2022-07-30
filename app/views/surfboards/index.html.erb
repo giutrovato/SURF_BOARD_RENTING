@@ -4,9 +4,11 @@
         <div class="row surfboard-index">
         <% @surfboards.each do |surfboard| %>
           <div class="col-3">
-            <div class="card text-center">
+            <div class="card-product text-center">
               <% if surfboard.photo.attached? %>
-                <%= cl_image_tag surfboard.photo.key, height: 50, class:"index-pictures" %>
+                <%= cl_image_tag surfboard.photo.key, height: 120, class:"index-pictures" %>
+                <% else %>
+                <%= image_tag "surfboard.png", height: 120, class:"index-pictures"%>
               <%end %>
               <div class="card-body">
                 <h4 class="card-title"><%= surfboard.brand %></h4>
