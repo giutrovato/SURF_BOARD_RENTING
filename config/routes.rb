@@ -10,9 +10,10 @@ Rails.application.routes.draw do
   # patch "surfboards/:id", to: "surfboards#update"
 
   resources :surfboards, only: [:index, :show, :new, :create] do
-    resources :bookings, only: [:new, :create]
+    resources :bookings, only: [:new, :create, :show]
   end
   resources :bookings, only: [:show, :index]
+  get "/my_bookings", to: "pages#my_bookings"
 end
 
 

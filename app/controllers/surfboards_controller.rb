@@ -21,6 +21,7 @@ class SurfboardsController < ApplicationController
 
   def show
     @surfboard = Surfboard.find(params[:id])
+    @booking = Booking.new
   end
 
   def update
